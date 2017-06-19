@@ -13,3 +13,7 @@ cd simplemitm
 chmod +x simplemitm.sh
 ./simplemitm.sh
 ```
+
+Running this script will start up a wireless access point named "linksys" that hands out DHCP addresses in the 10.1.1.0/24 subnet. It forwards all traffic from that network to wlan0 via bridge interface br0, then redirects traffic on port 80 to port 8080 and launches mitmproxy to listen on that port. From there, you can use mitmproxy to sniff HTTP conversations and manipulate the traffic.
+
+For further reading, see http://docs.mitmproxy.org/en/latest/mitmproxy.html
